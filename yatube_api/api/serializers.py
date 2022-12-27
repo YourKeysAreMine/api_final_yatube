@@ -19,9 +19,7 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Comment
-        # Вопрос, почему если я убираю эту строку - при создании комментария
-        # в Postman'е требует помимо строки 'text' вводить строку 'post'?
-        read_only_fields = ('author', 'post')
+        read_only_fields = ('post',)
 
 
 class GroupSerializer(serializers.ModelSerializer):
